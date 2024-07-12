@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>비교연산자</title>
+</head>
+<body>
+    <h2>Login Form</h2>
+    <form id="loginForm">
+        <label for="username">username:</label>
+        <input type="text" id="username" name="username"><br>
+        <label for="password">password</label>
+        <input type="text" id="password" name="password"><br>
+        <button type="button" id="loginbt">Login</button>
+    </form>
+    <p id="message"></p>
+    <script>
+        //저장된 사용자 아이디와 비밀번호 더미데이터에 저장
+        const storeUser = {
+            username : "hjy",
+            password : "1234",
+        }
+    //   버튼저장
+        const loginbt = document.getElementById("loginbt");
+        loginbt.onclick = function(){
+            // 입력되는 데이터를 저장
+            const username = document.getElementById("username").value;
+            const password = document.getElementById("password").value;
+            // console.log(username)
+            // 입력된 데어티와 저장된 데이터랑 비교한다.
+            if(username === storeUser.username && password === storeUser.password){
+                document.getElementById("message").innerHTML = "로그인 성공!"
+            }else{
+                document.getElementById("message").innerHTML = "로그인 실패!"
+            }
+        }
+    </script>
+    
+</body>
+</html>
